@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:service="http://service.server.ws.jax.soap.fedorizvekov.com/"
+                  xmlns:obj="http://model.server.ws.jax.soap.fedorizvekov.com/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <service:registration>
+            <obj:registrationRequest>
+                <email>test@email.com</email>
+                <password>TestPassword</password>
+                <phoneNumber>1234567890</phoneNumber>
+                <firstName>TestFirstName</firstName>
+                <lastName>TestLastName</lastName>
+            </obj:registrationRequest>
+        </service:registration>
+    </soapenv:Body>
+</soapenv:Envelope>
