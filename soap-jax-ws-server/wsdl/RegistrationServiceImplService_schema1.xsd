@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://service.server.ws.jax.soap.fedorizvekov.com/" xmlns:tns="http://service.server.ws.jax.soap.fedorizvekov.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://model.server.ws.jax.soap.fedorizvekov.com/">
+
+  <xs:import namespace="http://model.server.ws.jax.soap.fedorizvekov.com/" schemaLocation="RegistrationServiceImplService_schema2.xsd"/>
+
+  <xs:element name="registration" type="tns:registration"/>
+
+  <xs:element name="registrationResponse" type="tns:registrationResponse"/>
+
+  <xs:complexType name="registration">
+    <xs:sequence>
+      <xs:element ref="ns1:registrationRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="userDto">
+    <xs:sequence>
+      <xs:element name="email" type="xs:string" minOccurs="0"/>
+      <xs:element name="firstName" type="xs:string" minOccurs="0"/>
+      <xs:element name="lastName" type="xs:string" minOccurs="0"/>
+      <xs:element name="password" type="xs:string" minOccurs="0"/>
+      <xs:element name="phoneNumber" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="registrationResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
