@@ -33,3 +33,9 @@ curl -H "Content-Type: text/xml;charset=UTF-8" -d @client_request.xml http://loc
 ```
 wsgen -cp target/classes -wsdl -r ./wsdl -verbose com.fedorizvekov.soap.jax.ws.server.service.RegistrationServiceImpl
 ```
+
+## Generation Client & Server from WSDL
+
+```
+mkdir -p ./generated/ && wsimport -s ./generated/ -keep -p com.fedorizvekov.soap.jax.ws.generated ./wsdl/RegistrationServiceImplService.wsdl
+```
