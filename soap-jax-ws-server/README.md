@@ -15,17 +15,17 @@ mvn clean install
 
 3. Run the server:
 ```
-java -jar target/soap-jax-ws-server-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+java -jar ./target/soap-jax-ws-server-1.0.0-SNAPSHOT.jar
 ```
 
 4. Check the WSDL:
 ```
-curl "http://localhost:8080/registration?wsdl"
+curl "http://localhost:8081/registration?wsdl"
 ```
 
 5. Check the server:
 ```
-curl -H "Content-Type: text/xml;charset=UTF-8" -d @client_request.xml http://localhost:8080/registration
+curl -H "Content-Type: text/xml;charset=UTF-8" -d @client_request.xml http://localhost:8081/registration
 ```
 
 ## WSDL Generation
