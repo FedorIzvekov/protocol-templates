@@ -15,7 +15,7 @@ mvn clean install
 
 3. Run the server:
 ```
-java -jar <projects_directory>/http-servlet-server/target/http-servlet-server-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+java -jar ./target/http-servlet-server-1.0.0-SNAPSHOT.jar
 ```
 
 4. Check the server:
