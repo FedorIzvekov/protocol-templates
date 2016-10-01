@@ -28,6 +28,7 @@ public class RegistrationServlet extends HttpServlet {
             log.info("Request contain user: " + userDto.toString());
 
             response.setStatus(HttpServletResponse.SC_CREATED);
+            response.getWriter().write("REGISTRATION COMPLETED SUCCESSFULLY, user: " + userDto);
 
         } catch (Exception exception) {
             log.error("Something went wrong, because: ", exception);
