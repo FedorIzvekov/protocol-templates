@@ -1,34 +1,29 @@
 package com.fedorizvekov.http.servlet.server.servlet;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fedorizvekov.http.servlet.server.model.UserDto;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @WebServlet("/registration")
 public class RegistrationServlet extends HttpServlet {
 
-    Logger log = LoggerFactory.getLogger(RegistrationServlet.class);
+    public void doPost(HttpServletRequest request, HttpServletResponse response) {
 
-
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        log.info("REQUEST POST, endpoint /registration was called");
+        log.info("REQUEST POST endpoint {}", request.getRequestURL().toString());
 
         try {
 
             String json = request.getReader().readLine();
             UserDto userDto = new ObjectMapper().readValue(json, UserDto.class);
-            log.info("Request contain user: " + userDto.toString());
+            log.info("Request contain user: {}", userDto.toString());
 
             response.setStatus(HttpServletResponse.SC_CREATED);
-            response.getWriter().write("REGISTRATION COMPLETED SUCCESSFULLY, user: " + userDto);
+            response.getWriter().write("REGISTRATION COMPLETED, user: " + userDto);
 
         } catch (Exception exception) {
             log.error("Something went wrong, because: ", exception);
