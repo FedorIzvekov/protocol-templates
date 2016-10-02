@@ -16,6 +16,7 @@
         <mainClass>com.fedorizvekov.websocket.servlet.server.WebsocketServletServer</mainClass>
 
         <jetty-server.version>9.3.11.v20160721</jetty-server.version>
+        <lombok.version>1.16.10</lombok.version>
         <logback.version>1.1.7</logback.version>
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
         <maven-assembly-plugin.version>2.6</maven-assembly-plugin.version>
@@ -41,6 +42,12 @@
             <groupId>org.eclipse.jetty.websocket</groupId>
             <artifactId>websocket-server</artifactId>
             <version>${jetty-server.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
