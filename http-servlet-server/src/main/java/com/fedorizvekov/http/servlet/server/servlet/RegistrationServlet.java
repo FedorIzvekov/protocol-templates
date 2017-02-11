@@ -4,6 +4,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fedorizvekov.http.servlet.server.model.UserDto;
 import lombok.extern.slf4j.Slf4j;
@@ -25,9 +26,16 @@ public class RegistrationServlet extends HttpServlet {
             response.setStatus(HttpServletResponse.SC_CREATED);
             response.getWriter().write("REGISTRATION COMPLETED, user: " + userDto);
 
+        } catch (JsonProcessingException exception) {
+
+            log.error("Bad request, because: ", exception);
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+
         } catch (Exception exception) {
+
             log.error("Something went wrong, because: ", exception);
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+
         }
     }
 
