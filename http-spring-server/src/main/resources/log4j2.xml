@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="5">
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout
+                    pattern="%style{%d{DEFAULT}}{magenta} %style{[%t]}{blue} %highlight{%-5level}{FATAL=bg_red, ERROR=red, WARN=yellow, INFO=green} %style{%logger{36}}{yellow}: [rqUID=%X{rqUID}] %msg%n%throwable{short.lineNumber}"
+            />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="ConsoleAppender"/>
+        </Root>
+    </Loggers>
+</Configuration>
